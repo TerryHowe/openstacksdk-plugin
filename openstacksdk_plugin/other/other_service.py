@@ -13,16 +13,16 @@
 from openstack.auth import service_filter
 
 
-class ExampleService(service_filter.ServiceFilter):
-    """The example service extension."""
+class OtherService(service_filter.ServiceFilter):
+    """The other example service extension."""
 
     valid_versions = [service_filter.ValidVersion('v1')]
 
     def __init__(self, version=None):
-        """Create an example service
+        """Create another example service
 
         The service_type should match what is specified in the service catalog.
         """
-        super(ExampleService, self).__init__(service_type='example',
-                                             vendor='vendor',
-                                             version=version)
+        super(OtherService, self).__init__(service_type='other',
+                                           vendor='vendor',
+                                           version=version)

@@ -12,15 +12,15 @@
 
 import testtools
 
-from openstacksdk_plugin.example import example_service
+from openstacksdk_plugin.other import other_service
 
 
-class TestExampleService(testtools.TestCase):
+class TestOtherService(testtools.TestCase):
 
     def test_service(self):
-        sut = example_service.ExampleService()
+        sut = other_service.OtherService()
         self.assertEqual('vendor', sut.vendor)
-        self.assertEqual('example', sut.service_type)
+        self.assertEqual('other', sut.service_type)
         self.assertEqual('public', sut.visibility)
         self.assertIsNone(sut.region)
         self.assertIsNone(sut.service_name)

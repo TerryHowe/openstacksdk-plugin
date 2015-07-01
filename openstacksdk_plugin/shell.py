@@ -27,6 +27,8 @@ from openstack import connection
 from openstack import profile
 import os_client_config
 
+from openstacksdk_plugin import vendor
+
 
 def main(argv=sys.argv[1:]):
     os_cloud = os.environ.get('OS_CLOUD')
@@ -45,10 +47,12 @@ def main(argv=sys.argv[1:]):
         print("")
         print("Feel free to copy this script and modify it to your tastes.")
         sys.exit(1)
-    prof = profile.Profile(extensions=['openstacksdk_plugin.example'])
+    prof = profile.Profile(extensions=vendor.extensions)
     conn = connection.Connection(profile=prof, **auth)
     print(conn.example.return_hello())
     print(conn.example.return_goodbye())
+    print(conn.other.return_bonjour())
+    print(conn.other.return_au_revoir())
 
 
 if __name__ == "__main__":
