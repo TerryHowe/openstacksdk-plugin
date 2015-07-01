@@ -19,8 +19,7 @@ class ExampleService(service_filter.ServiceFilter):
     valid_versions = [service_filter.ValidVersion('v1')]
 
     def __init__(self, version=None):
-        """
-        Create an example service
+        """Create an example service
 
         The service_type should match what is specified in the service catalog.
         """
