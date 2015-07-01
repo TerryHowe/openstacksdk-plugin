@@ -23,10 +23,9 @@ it needs to build a proper connection.
 import os
 import sys
 
-import os_client_config
-
 from openstack import connection
 from openstack import profile
+import os_client_config
 
 
 def main(argv=sys.argv[1:]):
