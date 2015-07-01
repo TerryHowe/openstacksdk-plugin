@@ -18,11 +18,11 @@ from openstacksdk_plugin.example import example_service
 class TestExampleService(testtools.TestCase):
 
     def test_service(self):
-        sot = example_service.ExampleService()
-        self.assertEqual('vendor:service', sot.service_type)
-        self.assertEqual('public', sot.visibility)
-        self.assertIsNone(sot.region)
-        self.assertIsNone(sot.service_name)
-        self.assertEqual(1, len(sot.valid_versions))
-        self.assertEqual('v1', sot.valid_versions[0].module)
-        self.assertEqual('v1', sot.valid_versions[0].path)
+        sut = example_service.ExampleService()
+        self.assertEqual('vendor:service', sut.service_type)
+        self.assertEqual('public', sut.visibility)
+        self.assertIsNone(sut.region)
+        self.assertIsNone(sut.service_name)
+        self.assertEqual(1, len(sut.valid_versions))
+        self.assertEqual('v1', sut.valid_versions[0].module)
+        self.assertEqual('v1', sut.valid_versions[0].path)
