@@ -1,8 +1,3 @@
-# -*- coding: utf-8 -*-
-
-# Copyright 2010-2011 OpenStack Foundation
-# Copyright (c) 2013 Hewlett-Packard Development Company, L.P.
-#
 # Licensed under the Apache License, Version 2.0 (the "License"); you may
 # not use this file except in compliance with the License. You may obtain
 # a copy of the License at
@@ -15,9 +10,18 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
-from oslotest import base
+import mock
+import testtools
+
+from openstacksdk_plugin.example.v1 import _proxy
 
 
-class TestCase(base.BaseTestCase):
+class TestExampleProxy(testtools.TestCase):
+    def setUp(self):
+        super(TestExampleProxy, self).setUp()
+        self.session = mock.MagicMock()
+        self.proxy = _proxy.Proxy(self.session)
 
-    """Test case base class for all unit tests."""
+    def test_everything(self):
+        self.assertEqual('Hello', self.proxy.return_hello())
+        self.assertEqual('Goodbye', self.proxy.return_goodbye())
